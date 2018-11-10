@@ -12,7 +12,7 @@ import axios from 'axios';
 
 import './main.html';
 
-axios.defaults.baseURL = 'http://localhost:3000/api';
+axios.defaults.baseURL = 'http://142.93.42.221/api';
 axios.defaults.headers.get['Accepts'] = 'application/json';
 
 const reqInterceptor = axios.interceptors.request.use(config => {
