@@ -22,3 +22,4 @@ http
 fortawesome:fontawesome
 force-ssl
 session
+iron:router

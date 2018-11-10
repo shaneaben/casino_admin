@@ -1,9 +1,14 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-import { Session } from 'meteor/session';
+import '/imports/startup/client';
+import '/imports/ui/components';
+
+User = new Mongo.Collection('user');
+
+// import { Meteor } from 'meteor/meteor';
+// import { Template } from 'meteor/templating';
+// import { ReactiveVar } from 'meteor/reactive-var';
+// import { Session } from 'meteor/session';
 import axios from 'axios';
-import swal from 'sweetalert2';
+// import swal from 'sweetalert2';
 
 import './main.html';
 
@@ -23,12 +28,12 @@ const resInterceptor = axios.interceptors.response.use(res => {
 axios.interceptors.request.eject(reqInterceptor);
 axios.interceptors.response.eject(resInterceptor);
 
-const toast = swal.mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 3000
-});
+// const toast = swal.mixin({
+//   toast: true,
+//   position: 'top-end',
+//   showConfirmButton: false,
+//   timer: 3000
+// });
 
 Template.main.onCreated(async function mainOnCreated() {
   this.loading =  new ReactiveVar(false);
